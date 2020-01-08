@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<GridPane hgap="5.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.filter.FilterBillController">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <HBox fx:id="propertyFilterHBox" GridPane.columnIndex="1">
+         <children>
+            <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="收入" />
+            <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="支出" />
+            <RadioButton layoutX="55.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="不限" />
+         </children>
+      </HBox>
+      <Label alignment="CENTER" prefHeight="30.0" prefWidth="40.0" text="性质：" />
+      <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="40.0" text="类别：" GridPane.rowIndex="1" />
+      <ComboBox fx:id="categoryFilterBox" onAction="#filterAction" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="30.0" prefWidth="40.0" text="金额：" GridPane.rowIndex="2" />
+      <Label alignment="CENTER" layoutX="320.0" layoutY="10.0" prefHeight="30.0" prefWidth="40.0" text="日期：" GridPane.rowIndex="3" />
+      <HBox layoutX="70.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <Label alignment="CENTER" layoutX="90.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" text="¥">
+            <font>
+               <Font size="18.0"/>
+            </font>
+         </Label>
+         <Spinner fx:id="minAmountFilterSpinner" editable="true" prefHeight="30.0" prefWidth="80.0">
+            <tooltip>
+               <Tooltip text="最小金额"/>
+            </tooltip>
+         </Spinner>
+         <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" text="~">
+            <font>
+               <Font size="18.0"/>
+            </font>
+         </Label>
+         <Spinner fx:id="maxAmountFilterSpinner" editable="true" layoutX="10.0" layoutY="10.0" prefHeight="30.0"
+                  prefWidth="80.0">
+            <tooltip>
+               <Tooltip text="最大金额"/>
+            </tooltip>
+         </Spinner>
+      </HBox>
+      <HBox layoutX="380.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <DatePicker fx:id="startDateFilterPicker" editable="false" prefHeight="30.0" prefWidth="110.0">
+               <tooltip>
+                  <Tooltip text="开始日期" />
+               </tooltip>
+            </DatePicker>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="30.0" text="~">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="endDateFilterPicker" editable="false" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="110.0">
+               <tooltip>
+                  <Tooltip text="结束日期" />
+               </tooltip>
+            </DatePicker>
+         </children>
+      </HBox>
+   </children>
+</GridPane>

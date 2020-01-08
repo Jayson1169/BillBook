@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="750.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0"
+      prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="scene.detail.BillPaneController">
+   <StackPane maxWidth="170.0" minWidth="140.0" prefHeight="50.0" prefWidth="140.0">
+      <Label fx:id="dateLabel" alignment="CENTER" maxWidth="100.0" prefHeight="212.0" prefWidth="100.0" text="Label">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </Label>
+      <DatePicker fx:id="datePicker" maxWidth="135.0" minWidth="135.0" prefHeight="30.0" prefWidth="135.0"
+                  visible="false"/>
+   </StackPane>
+   <StackPane maxWidth="125.0" minWidth="130.0" prefHeight="50.0" prefWidth="130.0">
+      <Label fx:id="amountLabel" alignment="CENTER" maxWidth="100.0" minWidth="-Infinity" prefHeight="50.0"
+             prefWidth="100.0" text="Label">
+         <font>
+            <Font name="System Bold" size="18.0"/>
+         </font>
+      </Label>
+      <TextField fx:id="amountInput" maxHeight="30.0" maxWidth="115.0" minHeight="30.0" minWidth="120.0"
+                 prefHeight="50.0" prefWidth="120.0" visible="false">
+         <padding>
+            <Insets left="35.0" right="35.0"/>
+         </padding>
+      </TextField>
+   </StackPane>
+   <StackPane maxWidth="140.0" minWidth="120.0" prefHeight="150.0" prefWidth="130.0">
+      <Label fx:id="categoryLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="123.0" prefHeight="50.0"
+             prefWidth="123.0" text="Label"/>
+      <ComboBox fx:id="categoryCombobox" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" visible="false"
+                StackPane.alignment="CENTER_LEFT">
+         <StackPane.margin>
+            <Insets/>
+         </StackPane.margin>
+      </ComboBox>
+   </StackPane>
+   <StackPane maxWidth="126.0" minWidth="140.0" prefHeight="50.0" prefWidth="140.0">
+      <Label fx:id="remarkLabel" alignment="CENTER" maxWidth="130.0" prefWidth="130.0" text="Label"/>
+      <TextField fx:id="remarkInput" maxHeight="30.0" maxWidth="130.0" minWidth="130.0" prefHeight="30.0"
+                 prefWidth="130.0" visible="false">
+         <padding>
+            <Insets left="10.0" right="10.0"/>
+         </padding>
+      </TextField>
+   </StackPane>
+   <StackPane maxWidth="250.0" prefHeight="50.0" prefWidth="184.0">
+      <Button fx:id="editButton" mnemonicParsing="false" onMouseClicked="#onEdit"
+              style="-fx-background-color: #0f8df4;" stylesheets="@../../resource/css/style.css" text="编辑"
+              textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND"/>
+         </cursor>
+         <styleClass>
+            <String fx:value="btn-basic"/>
+            <String fx:value="btn-radius-normal"/>
+         </styleClass>
+      </Button>
+      <HBox fx:id="editPane" minWidth="0.0" prefHeight="50.0" prefWidth="204.0" spacing="10.0" visible="false">
+         <padding>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0"/>
+         </padding>
+         <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#onSave"
+                 style="-fx-background-color: green;" styleClass="btn-basic"
+                 stylesheets="@../../resource/css/style.css" text="保存" textFill="WHITE"/>
+         <Button fx:id="deleteButton" mnemonicParsing="false" onMouseClicked="#onDelete"
+                 style="-fx-background-color: red;" styleClass="btn-basic"
+                 stylesheets="@../../resource/css/style.css" text="删除" textFill="#f2f2f2"/>
+         <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#onCancel"
+                 style="-fx-background-color: grey;" styleClass="btn-basic"
+                 stylesheets="@../../resource/css/style.css" text="取消" textFill="WHITE"/>
+      </HBox>
+   </StackPane>
+</HBox>
