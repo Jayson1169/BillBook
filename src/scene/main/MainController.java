@@ -63,7 +63,7 @@ public class MainController implements Initializable {
 		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setHeaderText(null);
 		alert.setTitle("关于……");
-		alert.setContentText("\t\t\t关于“懒人记账”\n\n" +
+		alert.setContentText("\t\t\t\t关于“懒人记账”\n\n" +
 				"\t为您提供随时随地记账服务，通过账单搜索助您明确开支去向，动态图文报表帮您了解生活中开支服务！\n\n");
 		alert.showAndWait();
 	}
